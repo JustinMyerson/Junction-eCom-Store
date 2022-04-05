@@ -61,8 +61,8 @@ body {
 
 .cart-list li:last-of-type {
   margin-left: 40px;
-  width: 32px;
-  height: 32px;
+  width: 50px;
+  height: 50px;
 }
 
 .navigation {
@@ -77,31 +77,27 @@ body {
   flex-direction: row;
 }
 
-.winter-stock {
+.winter-stock-div {
   position: relative;
 }
 
-.winter-stock-image {
+.winter-stock-text {
   position: absolute;
-}
-
-.winter-stock-sale {
-  display: flex;
   background-color: black;
   opacity: 50%;
-  position: absolute;
+  text-align: center;
   left: 4.4%;
   right: 67.48%;
   top: 21.35%;
   bottom: 21.09%;
 }
 
-.winter-stock-text {
+.winter-stock-text p {
   font-family: 'Rockwell Extra Bold';
-  font-style: normal;
   font-weight: 800;
   font-size: 50px;
   color: white;
+  margin: 0;
 }
 
 /* Images */
