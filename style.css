@@ -1,4 +1,36 @@
+/* Body */
+body {
+  font-family: Roboto, sans-serif;
+}
+
 /* Page wrapper */
 .page-wrapper {
   display: flex
+}
+
+/* Header */
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.header-list-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header-list-items li {
+  margin-bottom: 20px;
+  list-style: none;
+}
+
+.header-list-items a {
+  list-style: none;
+  text-decoration: none;
+  color: black;
+  font-size: 22px;
+  text-transform: uppercase;
 }
