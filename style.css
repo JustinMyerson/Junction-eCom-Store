@@ -1,6 +1,7 @@
 /* Body */
 body {
   font-family: Roboto, sans-serif;
+  overflow-x:hidden;
 }
 
 /* Page wrapper */
@@ -44,6 +45,8 @@ body {
   text-decoration: none;
   color: black;
   font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
   text-transform: uppercase;
 }
 
@@ -69,4 +72,35 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.winter-stock {
+  position: relative;
+}
+
+.winter-stock-image {
+  position: absolute;
+}
+
+.winter-stock-image img {
+  /* height: 384px; */
+}
+
+.winter-stock-sale {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-color: black;
+  opacity: 50%;
+  position: absolute;
+  font-family: 'Rockwell Extra Bold';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 50px;
+  color: white;
+}
+
+/* Images */
+img {
+  width: 100%;
 }
