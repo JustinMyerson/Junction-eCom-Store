@@ -53,25 +53,28 @@ body {
 .cart-list {
   list-style: none;
   display: flex;
-  padding: 0px;
-  justify-content: space-between;
+}
+
+.cart-list li{
+  padding-left: 10px;
 }
 
 .cart-list li:last-of-type {
   margin-left: 40px;
+  width: 32px;
+  height: 32px;
 }
 
 .navigation {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 20px;
+  padding: 20px 10px;
 }
 
 .navigation-items {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 
 .winter-stock {
