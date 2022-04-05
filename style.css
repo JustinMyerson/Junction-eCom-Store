@@ -29,7 +29,7 @@ body {
 .header-list-items {
   display: flex;
   flex-direction: row;
-  text-align: center;
+  align-items: center;
   float: right;
 }
 
@@ -48,6 +48,7 @@ body {
   font-style: normal;
   font-weight: 400;
   text-transform: uppercase;
+  line-height: 25.78px;
 }
 
 .cart-list {
@@ -81,23 +82,26 @@ body {
   position: relative;
 }
 
-.winter-stock-text {
+.winter-stock-box {
   position: absolute;
   background-color: black;
-  opacity: 50%;
+  background: rgba(0, 0, 0, 0.5);
   text-align: center;
+  align-items: center;
   left: 4.4%;
   right: 67.48%;
   top: 21.35%;
   bottom: 21.09%;
 }
 
-.winter-stock-text p {
+.winter-stock-text {
   font-family: 'Rockwell Extra Bold';
   font-weight: 800;
   font-size: 50px;
+  font-style: normal;
   color: white;
   margin: 0;
+  line-height: 59px;
 }
 
 /* Images */
