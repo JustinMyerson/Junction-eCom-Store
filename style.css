@@ -1,6 +1,7 @@
 /* Body */
 body {
-  font-family: Roboto, sans-serif;
+  overflow-x:hidden;
+  margin: 0;
 }
 
 /* Page wrapper */
@@ -16,6 +17,7 @@ body {
   color: white;
   padding: 30px 0px;
   font-size: 30px;
+  font-family: Roboto, sans-serif;
 }
 
 .header {
@@ -25,10 +27,13 @@ body {
   justify-content: space-between;
 }
 
+
 .header-list-items {
+
+  font-family: Roboto, sans-serif;
   display: flex;
   flex-direction: row;
-  text-align: center;
+  align-items: center;
   float: right;
 }
 
@@ -44,29 +49,96 @@ body {
   text-decoration: none;
   color: black;
   font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
   text-transform: uppercase;
+  line-height: 25.78px;
 }
 
 .cart-list {
   list-style: none;
   display: flex;
-  padding: 0px;
-  justify-content: space-between;
+}
+
+.cart-list li{
+  padding-left: 10px;
 }
 
 .cart-list li:last-of-type {
-  margin-left: 40px;
+  padding-left: 40px;
+  width: 50px;
+  height: 50px;
+}
+
+.items-in-cart {
+  position: relative;
+  display: inline-block; 
+  width: 39px;
+  height: 39px;
+}
+
+.items-in-cart-box {
+  position: absolute;
+  color: black;
+  top: 9px; 
+  margin-left: 15px;
+}
+
+.items-in-cart-text {
+  margin: 0;
 }
 
 .navigation {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 20px;
+  align-items: center;
+  text-align: center;
+  padding: 20px 10px;
 }
 
 .navigation-items {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+}
+
+.winter-stock-div {
+  position: relative;
+}
+
+.winter-stock-box {
+  position: absolute;
+  background-color: black;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  align-items: center;
+  left: 4.4%;
+  right: 67.48%;
+  top: 21.35%;
+  bottom: 21.09%;
+}
+
+.winter-stock-text {
+  font-family: 'Rockwell Extra Bold';
+  font-weight: 800;
+  font-size: 50px;
+  font-style: normal;
+  color: white;
+  margin: 0;
+  line-height: 59px;
+}
+
+/* Images */
+img {
+  width: 100%;
+}
+
+/* Buttons */
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: orange 5px auto;
 }
