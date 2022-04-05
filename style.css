@@ -130,6 +130,10 @@ body {
 }
 
 /* Footer */
+.solid {
+  border: 1px solid;
+  color: black;
+}
 
 .footer-text {
   text-align: center;
@@ -137,7 +141,7 @@ body {
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
-  line-height: 50px;
+  line-height: 50.4px;
 }
 
 /* Images */
