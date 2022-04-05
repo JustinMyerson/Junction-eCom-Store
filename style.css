@@ -82,17 +82,18 @@ body {
   position: absolute;
 }
 
-.winter-stock-image img {
-  /* height: 384px; */
-}
-
 .winter-stock-sale {
   display: flex;
-  align-items: center;
-  text-align: center;
   background-color: black;
   opacity: 50%;
   position: absolute;
+  left: 4.4%;
+  right: 67.48%;
+  top: 21.35%;
+  bottom: 21.09%;
+}
+
+.winter-stock-text {
   font-family: 'Rockwell Extra Bold';
   font-style: normal;
   font-weight: 800;
