@@ -141,16 +141,25 @@ h1 {
 
 .main {
   padding-bottom: 200px;
-}
-
-.product-card {
   display: flex;
   flex-direction: column;
 }
 
-.product-div {
-  position: relative;
+.all-products {
+  display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: row;
+}
+
+.product-div {
+  display: flex;
+  position: relative;
+  flex-direction: column;
   height: 944px;
   width: 500px;
   padding-left: 10px;
@@ -229,7 +238,8 @@ h1 {
 
 .load-more-div {
   display: flex;
-  padding-top: 30px;
+  padding-top: 72px;
+  justify-content: center;
 }
 
 .load-more-button {
