@@ -28,25 +28,14 @@ body {
   justify-content: space-between;
 }
 
-.header-text {
-  text-align: center;
-  font-family: 'Racing Sans One';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 55px;
-  line-height: 69.3px;
-  margin: 0px;
-  margin-left: 45.54px;
-}
-
 
 .header-list-items {
+
   font-family: Roboto, sans-serif;
   display: flex;
   flex-direction: row;
   align-items: center;
   float: right;
-  padding-top: 10px;
 }
 
 .header-list-items li {
@@ -70,7 +59,6 @@ body {
 .cart-list {
   list-style: none;
   display: flex;
-  padding-top: 10px;
 }
 
 .cart-list li{
@@ -141,19 +129,6 @@ body {
   line-height: 59px;
 }
 
-/* Footer */
-.solid {
-  border: 1px solid;
-  color: black;
-}
-
-.footer-text {
-  text-align: center;
-  font-family: 'Racing Sans One';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 50.4px;
 /* Product */
 h1 {
   text-transform: uppercase;
