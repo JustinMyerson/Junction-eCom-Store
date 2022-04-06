@@ -175,8 +175,6 @@ h1 {
   flex-direction: row;
   height: 944px;
   width: 500px;
-  padding-left: 10px;
-  padding-bottom: 10px;
 }
 
 .product-image {
@@ -192,7 +190,6 @@ h1 {
 }
 
 .product-image-text {
-  text-transform: uppercase;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
@@ -208,7 +205,6 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 10px;
 }
 
 .product-name {
@@ -227,7 +223,6 @@ h1 {
   font-weight: 300;
   font-size: 30px;
   line-height: 35px;
-  padding-bottom: 100px;
 }
 
 .prices-and-icons {
@@ -244,10 +239,6 @@ h1 {
 
 .current-price {
   font-size: 50px;
-}
-
-.product-cart-button {
-  padding-top: 50px;
 }
 
 /* Images */
