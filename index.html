@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Junction eCom Store</title>
+    <script src="app.js" defer></script>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -16,7 +17,6 @@
       href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Rock+3D&display=swap"
       rel="stylesheet"
     />
-    <script src="app.js"></script>
   </head>
   <body>
     <div class="page-wrapper">
@@ -103,7 +103,7 @@
                       <div class="current-price">R 17, 390.00</div>
                     </div>
                     <div class="product-cart-button">
-                      <button>
+                      <button id="add-to-cart">
                         <img src="/assets/add-to-cart.png" alt="cart-button" />
                       </button>
                     </div>
@@ -131,7 +131,7 @@
                       <div class="current-price">R 17, 390.00</div>
                     </div>
                     <div class="product-cart-button">
-                      <button>
+                      <button id="add-to-cart">
                         <img src="/assets/add-to-cart.png" alt="cart-button" />
                       </button>
                     </div>
@@ -144,7 +144,7 @@
                 <div class="product-card">
                   <img src="assets/macbook.png" alt="product-image" />
                   <div class="product-image">
-                    <p class="product-image-text">25% off</p>
+                    <p class="product-image-text">15% off</p>
                   </div>
                 </div>
                 <div class="product-details">
@@ -159,7 +159,7 @@
                       <div class="current-price">R 17, 390.00</div>
                     </div>
                     <div class="product-cart-button">
-                      <button>
+                      <button id="add-to-cart">
                         <img src="/assets/add-to-cart.png" alt="cart-button" />
                       </button>
                     </div>
@@ -169,7 +169,7 @@
             </li>
           </ul>
         <div class="load-more-div">
-          <button class="load-more-button">SHOW MORE</button>
+          <button class="load-more-button" id="load-more-button">SHOW MORE</button>
         </div>
       </main>
 

@@ -1,7 +1,13 @@
 // Header
 // Product
 
-document.querySelector("load-more-button").addEventListener("click", alert("Test"))
-console.log("test")
-alert("test")
+let loadMoreButton = document.getElementById("load-more-button");
+
+if (loadMoreButton) {
+  console.log("found")
+  loadMoreButton.addEventListener("click", () => {
+    console.log("Show more button clicked");
+  });
+}
+
 // Footer
