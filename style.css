@@ -177,22 +177,43 @@ h1 {
 .product-details {
   background-color: #F1E0E0;
   font-family: 'Roboto';
-}
-
-.product-details h2 {
-  text-transform: uppercase;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-name {
+  text-transform: capitalize;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 53px;
+  display: flex;
+  align-items: center;
 }
 
 .product-description {
+  font-style: normal;
   font-weight: 300;
-  size: 30px;
+  font-size: 30px;
+  line-height: 35px;
 }
 
 .prices-and-icons {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+}
+
+.old-price {
+  color: #890000;
+  text-decoration: line-through;
+  font-size: 50px;
+}
+
+.current-price {
+  font-size: 50px;
 }
 
 /* Images */
