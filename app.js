@@ -21,14 +21,14 @@ if (loadMoreButton) {
   });
 }
 
-let items = 0;
-for (let i = 0; i < addToCartButtons.length; i++) {
-  addToCartButtons[i].addEventListener("click", () => {
-    items += 1;
-    numberOfItemsInCart.innerHTML = items.toString();
+let itemsInCart = 0;
+Array.from(document.getElementsByClassName("product-cart-button")).forEach(function(addToCartButtons) {
+  addToCartButtons.addEventListener("click", () => {
+    itemsInCart += 1;
+    numberOfItemsInCart.innerHTML = itemsInCart.toString();
     console.log("Item added to cart");
   })
-}
+})
 
 
 console.log(calculateDiscountPercentage(19529, 17390))
