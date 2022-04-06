@@ -28,7 +28,6 @@ body {
   justify-content: space-between;
 }
 
-
 .header-list-items {
 
   font-family: Roboto, sans-serif;
@@ -140,6 +139,10 @@ h1 {
   line-height: 70px;
 }
 
+.main {
+  padding-bottom: 200px;
+}
+
 .product-card {
   display: flex;
   flex-direction: column;
@@ -151,7 +154,6 @@ h1 {
   height: 944px;
   width: 500px;
   padding-left: 10px;
-  padding-bottom: 10px;
 }
 
 .product-image {
@@ -223,6 +225,24 @@ h1 {
 
 .product-cart-button {
   padding-top: 50px;
+}
+
+.load-more-div {
+  display: flex;
+  padding-top: 30px;
+}
+
+.load-more-button {
+  background-color: #DBAFAE;
+  color: white;
+  width: 594px;
+  height: 106px;
+  text-align: center;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 47px;
 }
 
 /* Footer */
