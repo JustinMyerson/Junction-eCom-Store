@@ -225,6 +225,21 @@ h1 {
   padding-top: 50px;
 }
 
+/* Footer */
+.solid {
+  border: 1px solid;
+  color: black;
+}
+
+.footer-text {
+  text-align: center;
+  font-family: 'Racing Sans One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 50.4px;
+}
+
 /* Images */
 img {
   /* width: 100%; */
