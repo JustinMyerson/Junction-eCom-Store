@@ -140,9 +140,64 @@ h1 {
   line-height: 70px;
 }
 
+.product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-div {
+  position: relative;
+  flex-direction: row;
+  height: 944px;
+  width: 500px;
+}
+
+.product-image {
+  position: absolute;
+  background-color: black;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  align-items: center;
+  left: 68.8%;
+  right: 0%;
+  top: 2.97%;
+  bottom: 90.04%;
+}
+
+.product-image-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 35px;
+  text-align: right;
+  color: white;
+}
+
+.product-details {
+  background-color: #F1E0E0;
+  font-family: 'Roboto';
+}
+
+.product-details h2 {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-description {
+  font-weight: 300;
+  size: 30px;
+}
+
+.prices-and-icons {
+  display: flex;
+  flex-direction: row;
+}
+
 /* Images */
 img {
-  width: 100%;
+  /* width: 100%; */
 }
 
 /* Buttons */
