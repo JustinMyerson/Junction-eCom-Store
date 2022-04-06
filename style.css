@@ -70,6 +70,11 @@ body {
   height: 50px;
 }
 
+.cart-items {
+  margin-right: 45px;
+  margin-bottom: 38px;
+}
+
 .items-in-cart {
   position: relative;
   display: inline-block; 
@@ -106,6 +111,10 @@ body {
   position: relative;
 }
 
+.winter-stock-image {
+  width: 100%;
+}
+
 .winter-stock-box {
   position: absolute;
   background-color: black;
@@ -119,13 +128,14 @@ body {
 }
 
 .winter-stock-text {
-  font-family: 'Rockwell Extra Bold';
+  font-family: 'Rockwell';
   font-weight: 800;
   font-size: 50px;
   font-style: normal;
   color: white;
-  margin: 0;
   line-height: 59px;
+  align-items: center;
+  text-align: center;
 }
 
 /* Product */
