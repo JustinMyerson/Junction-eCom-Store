@@ -156,9 +156,16 @@ h1 {
 }
 
 .all-products {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  display: inline-block;
+}
+
+.product-list {
+  list-style: none;
+  display: inline-block;
+}
+
+.product-list li {
+  display: inline-block;
 }
 
 .product-card {
