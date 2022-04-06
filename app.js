@@ -32,12 +32,25 @@ Array.from(document.getElementsByClassName("product-cart-button")).forEach(funct
   })
 })
 
-Array.from(document.getElementsByClassName("old-price")).forEach(function(oldPrice) {
+let oldPrices = Array.from(document.getElementsByClassName("old-price")).forEach(function(oldPrice) {
+  let priceArray = new Array()
   let unformattedPrice = oldPrice.innerHTML
   let formattedPrice = 0;
   formattedPrice = parseInt(unformattedPrice.trim().substring(1).replace(/,/g, '').replace(/ /g,''))
+  priceArray.push(formattedPrice)
   console.log(formattedPrice)
 })
+
+let currentPrices = Array.from(document.getElementsByClassName("current-price")).forEach(function(oldPrice) {
+  let priceArray = new Array()
+  let unformattedPrice = oldPrice.innerHTML
+  let formattedPrice = 0;
+  formattedPrice = parseInt(unformattedPrice.trim().substring(1).replace(/,/g, '').replace(/ /g,''))
+  priceArray.push(formattedPrice)
+  console.log(formattedPrice)
+})
+
+
 
 
 console.log(calculateDiscountPercentage(19529, 17390))
