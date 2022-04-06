@@ -15,10 +15,6 @@ function calculateDiscountPercentage(originalPrice, discountPrice) {
   return Math.round(discount);
 }
 
-function convertPriceToInteger() {
-  let price = document.getElementById("");
-}
-
 // Header
 // Product
 

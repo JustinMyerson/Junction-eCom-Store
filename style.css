@@ -186,8 +186,6 @@ h1 {
   position: absolute;
   background-color: black;
   background: rgba(0, 0, 0, 0.5);
-  text-align: center;
-  align-items: center;
   left: 68.8%;
   right: 0%;
   top: 2.97%;
@@ -202,6 +200,8 @@ h1 {
   font-size: 30px;
   line-height: 35px;
   text-align: right;
+  margin-top: 16px;
+  margin-right: 12px;
   color: white;
 }
 
