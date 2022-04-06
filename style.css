@@ -7,6 +7,7 @@ body {
 /* Page wrapper */
 .page-wrapper {
   display: flex;
+  flex-direction: column;
 }
 
 /* Header */
@@ -126,6 +127,17 @@ body {
   color: white;
   margin: 0;
   line-height: 59px;
+}
+
+/* Product */
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 70px;
 }
 
 /* Images */
