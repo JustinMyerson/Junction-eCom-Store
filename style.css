@@ -209,7 +209,6 @@ h1 {
 
 .product-name {
   text-transform: capitalize;
-  font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
   font-size: 45px;
@@ -236,10 +235,12 @@ h1 {
   color: #890000;
   text-decoration: line-through;
   font-size: 50px;
+  font-weight: normal;
 }
 
 .current-price {
   font-size: 50px;
+  font-weight: bold;
 }
 
 .product-cart-button {
