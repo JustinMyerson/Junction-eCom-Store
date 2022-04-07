@@ -161,8 +161,16 @@ h1 {
 .all-products {
   text-align: center;
   justify-content: space-between;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   width: 100%;
+}
+
+.div-one,
+.div-two,
+.div-three {
+  display: flex;
+  flex-direction: row;
 }
 
 .product-list {
