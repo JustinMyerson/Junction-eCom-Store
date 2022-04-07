@@ -7,14 +7,10 @@
     <title>Junction eCom Store</title>
     <script src="app.js" defer></script>
     <link rel="stylesheet" href="single-product-style.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto"
-    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Rock+3D&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rock+3D&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -79,14 +75,13 @@
       </header>
 
       <main class="main">
-        <h1 class="products-heading">products</h1>
-
         <div class="product-div">
           <div class="product-card">
             <img src="assets/macbook.png" alt="product-image" />
           </div>
           <div class="product-details">
             <h2 class="product-name">mac book pro</h2>
+            <h3 class="product-designer">by <strong>apple</strong></h3>
             <div class="product-description">
               Mac Book Pro is made by Apple Computers and contains a powerful i7
               processor.
@@ -96,17 +91,13 @@
                 <div class="old-price">R 19, 529.00</div>
                 <div class="current-price">R 17, 390.00</div>
               </div>
-              <button class="add-to-cart-button" id="add-to-cart-button">
-                add to cart
-              </button>
+              <div class="cart-div">
+                <button class="add-to-cart-button" id="add-to-cart-button">
+                  add to cart
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="load-more-div">
-          <button class="load-more-button" id="load-more-button">
-            SHOW MORE
-          </button>
         </div>
       </main>
 
