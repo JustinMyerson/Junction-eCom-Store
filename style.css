@@ -166,9 +166,9 @@ h1 {
   width: 100%;
 }
 
-.div-one,
-.div-two,
-.div-three {
+.row-one,
+.row-two,
+.row-three {
   display: flex;
   flex-direction: row;
 }
@@ -182,6 +182,7 @@ h1 {
 
 .product-list li {
   display: inline-block;
+  margin: 0;
 }
 
 .product-list-item {
