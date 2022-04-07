@@ -160,6 +160,7 @@ h1 {
 
 .all-products {
   text-align: center;
+  justify-content: space-between;
   display: inline-block;
   width: 100%;
 }
@@ -168,6 +169,7 @@ h1 {
   list-style: none;
   display: inline-block;
   width: 100%;
+  padding: 0;
 }
 
 .product-list li {
@@ -176,7 +178,11 @@ h1 {
 
 .product-list-item {
   display: flex;
-  width: auto;
+  flex-grow: 1;
+}
+
+.product-list-item:nth-child(2) {
+  padding: 0 25px;
 }
 
 .product-card {
@@ -189,10 +195,9 @@ h1 {
   display: flex;
   position: relative;
   flex-direction: column;
-  flex-grow: 100;
-  height: 944px;
+  flex-grow: 1;
   width: 500px;
-  padding-left: 30px;
+  justify-content: space-between;
 }
 
 .product-image {
@@ -223,8 +228,10 @@ h1 {
   font-family: "Roboto";
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  text-align: left;
   padding: 10px;
+  height: 480px;
+  /* Height has to be less padding x2 */
 }
 
 .product-name {
@@ -271,7 +278,6 @@ h1 {
   display: flex;
   padding-top: 72px;
   justify-content: center;
-  padding-left: 30px;
 }
 
 .load-more-button {
