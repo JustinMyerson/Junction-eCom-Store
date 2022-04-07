@@ -179,9 +179,18 @@ h1 {
 .product-list-item {
   display: flex;
   flex-grow: 1;
+  padding-bottom: 20px;
 }
 
 .product-list-item:nth-child(2) {
+  padding: 0 25px;
+}
+
+.product-list-item:nth-child(5) {
+  padding: 0 25px;
+}
+
+.product-list-item:nth-child(8) {
   padding: 0 25px;
 }
 
