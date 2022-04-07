@@ -157,6 +157,7 @@ h1 {
 }
 
 .main {
+  padding-top: 100px;
   padding-bottom: 200px;
   display: flex;
   flex-direction: column;
@@ -190,6 +191,7 @@ h1 {
   font-size: 60px;
   line-height: 53px;
   align-items: center;
+  margin-top: 20px;
 }
 
 .product-designer {
@@ -210,7 +212,7 @@ h1 {
 .prices-and-buy {
   display: flex;
   flex-direction: column;
-  padding-top: 120px;
+  padding-top: 145px;
 }
 
 .old-price {
