@@ -26,6 +26,28 @@ let currentPrice = document.getElementsByClassName("current-price");
 let rowTwoDiv = document.getElementById("row-two");
 let rowThreeDiv = document.getElementById("row-three");
 
+async function getAllProducts() {
+  const response = await fetch(
+    "https://yoco-students-api-server.herokuapp.com/v1/junction/"
+  );
+  const data = await response.json();
+  console.log(JSON.stringify(data));
+}
+
+async function getSingleProduct() {
+  const response = await fetch(
+    "https://yoco-students-api-server.herokuapp.com/v1/junction/product/1"
+  );
+  const data = await response.json();
+
+  console.log(JSON.stringify(data));
+}
+
+function populateProductName() {}
+
+getSingleProduct();
+getAllProducts();
+
 let loadMoreClicked = 0;
 
 if (loadMoreButton) {
