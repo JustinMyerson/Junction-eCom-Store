@@ -21,8 +21,8 @@ body {
   justify-content: center;
   color: white;
   padding: 30px 0px;
-  font-size: 30px;
-  font-family: Roboto;
+  font-size: 35px;
+  font-family: Roboto, sans-serif;
 }
 
 .header {
@@ -33,7 +33,7 @@ body {
 }
 
 .header-list-items {
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -51,7 +51,7 @@ body {
   list-style: none;
   text-decoration: none;
   color: black;
-  font-size: 22px;
+  font-size: 35px;
   font-style: normal;
   font-weight: 400;
   text-transform: uppercase;
@@ -124,16 +124,20 @@ body {
   background: rgba(0, 0, 0, 0.5);
   text-align: center;
   align-items: center;
-  left: 4.4%;
+  /* left: 4.4%;
   right: 67.48%;
   top: 21.35%;
-  bottom: 21.09%;
+  bottom: 21.09%; */
+  width: 486px;
+  height: 221px;
+  top: 82px;
+  left: 76px;
 }
 
 .winter-stock-text {
   font-family: "Rockwell";
   font-weight: 800;
-  font-size: 50px;
+  font-size: 55px;
   font-style: normal;
   color: white;
   line-height: 59px;
