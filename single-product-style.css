@@ -176,13 +176,14 @@ h1 {
   display: flex;
   flex-direction: column;
   padding-left: 50px;
+  width: 900px;
 }
 
 .product-name {
   text-transform: capitalize;
   font-style: normal;
   font-weight: 700;
-  font-size: 45px;
+  font-size: 60px;
   line-height: 53px;
   align-items: center;
 }
@@ -191,7 +192,7 @@ h1 {
   text-transform: capitalize;
   font-style: normal;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 40px;
   line-height: 35.16px;
 }
 
@@ -205,18 +206,18 @@ h1 {
 .prices-and-buy {
   display: flex;
   flex-direction: column;
-  padding-top: 220px;
+  padding-top: 120px;
 }
 
 .old-price {
   color: #890000;
   text-decoration: line-through;
-  font-size: 50px;
+  font-size: 60px;
   font-weight: normal;
 }
 
 .current-price {
-  font-size: 50px;
+  font-size: 60px;
   font-weight: bold;
   padding-bottom: 100px;
 }
