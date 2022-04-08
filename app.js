@@ -71,23 +71,21 @@ if (loadMoreButton) {
     <div class="product-div">
       <div class="product-card">
         <a href="single-product.html">
-          <img src="assets/macbook.png" alt="product-image" class="product-image-asset" />
+          <img src="" alt="product-image" class="product-image-asset" />
         </a>
         <div class="product-image">
           <p class="product-image-text" id="discount">25% off</p>
         </div>
       </div>
       <div class="product-details">
-        <h2 class="product-name">mac book pro</h2>
+        <h2 class="product-name"></h2>
         <h3 class="product-designer">by <strong>apple</strong></h3>
         <div class="product-description">
-          Mac Book Pro is made by Apple Computers and contains a
-          powerful i7 processor.
         </div>
         <div class="prices-and-icons">
           <div class="prices">
-            <div class="old-price">R 19, 529.00</div>
-            <div class="current-price">R 17, 390.00</div>
+            <div class="old-price"></div>
+            <div class="current-price"></div>
           </div>
           <div class="product-cart-button">
             <button id="add-to-cart">
@@ -107,23 +105,21 @@ if (loadMoreButton) {
   <div class="product-div">
     <div class="product-card">
       <a href="single-product.html">
-        <img src="assets/macbook.png" alt="product-image" class="product-image-asset" />
+        <img src="" alt="product-image" class="product-image-asset" />
       </a>
       <div class="product-image">
         <p class="product-image-text" id="discount">25% off</p>
       </div>
     </div>
     <div class="product-details">
-      <h2 class="product-name">mac book pro</h2>
+      <h2 class="product-name"></h2>
       <h3 class="product-designer">by <strong>apple</strong></h3>
       <div class="product-description">
-        Mac Book Pro is made by Apple Computers and contains a
-        powerful i7 processor.
       </div>
       <div class="prices-and-icons">
         <div class="prices">
-          <div class="old-price">R 19, 529.00</div>
-          <div class="current-price">R 17, 390.00</div>
+          <div class="old-price"></div>
+          <div class="current-price"></div>
         </div>
         <div class="product-cart-button">
           <button id="add-to-cart">
