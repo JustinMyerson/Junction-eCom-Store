@@ -34,14 +34,14 @@ let productOldPrices = document.getElementsByClassName("old-price");
 let productDiscountedPrices = document.getElementsByClassName("current-price");
 let productImages = document.getElementsByClassName("product-image-asset");
 
-async function getAllProducts() {
+async function getAllProducts(productStart, productEnd) {
   const response = await fetch(
     "https://yoco-students-api-server.herokuapp.com/v1/junction/"
   );
   const data = await response.json();
   console.log(`${data.length} length`);
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = productStart; i < productEnd; i++) {
     productImages[i].src = data[i].image;
     productNames[i].innerHTML = data[i].name;
     productDesigners[i].innerHTML = data[i].company;
@@ -51,7 +51,7 @@ async function getAllProducts() {
   }
 }
 
-getAllProducts();
+getAllProducts(0, 3);
 
 async function getSingleProduct() {
   const response = await fetch(
@@ -59,15 +59,6 @@ async function getSingleProduct() {
   );
   const data = await response.json();
 }
-
-function populateProductNames(jsonObj) {
-  for (let i = 0; i < productNames.length; i++) {
-    productNames[i].innerHTML = jsonObj[i];
-    console.log(jsonObj[i].name);
-  }
-}
-
-//populateProductNames(getAllProducts());
 
 let loadMoreClicked = 0;
 
@@ -108,6 +99,7 @@ if (loadMoreButton) {
     </div>
   </li>`}`.repeat(3) +
       `</ul>`;
+    getAllProducts(3, 6);
     if (loadMoreClicked == 2) {
       rowThreeDiv.innerHTML =
         `<ul class="product-list">` +
@@ -143,6 +135,7 @@ if (loadMoreButton) {
   </div>
 </li>`}`.repeat(3) +
         `</ul>`;
+      getAllProducts(6, 9);
     }
   });
 }
