@@ -260,6 +260,16 @@ h1 {
   line-height: 53px;
   display: flex;
   align-items: center;
+  margin-bottom: 0px;
+}
+
+.product-designer {
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 35.16px;
+  padding-bottom: 10px;
 }
 
 .product-description {
@@ -267,7 +277,7 @@ h1 {
   font-weight: 300;
   font-size: 30px;
   line-height: 35px;
-  padding-bottom: 100px;
+  margin-bottom: 20px;
 }
 
 .prices-and-icons {

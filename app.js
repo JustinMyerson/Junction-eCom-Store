@@ -26,27 +26,43 @@ let currentPrice = document.getElementsByClassName("current-price");
 let rowTwoDiv = document.getElementById("row-two");
 let rowThreeDiv = document.getElementById("row-three");
 
-async function getAllProducts() {
-  const response = await fetch(
-    "https://yoco-students-api-server.herokuapp.com/v1/junction/"
-  );
-  const data = await response.json();
-  console.log(JSON.stringify(data));
-}
+// HTML Elements to be rendered
+let productNames = document.getElementsByClassName("product-name");
+let productDetails = document.getElementsByClassName("product-details");
+let productOldPrices = document.getElementsByClassName("old-price");
+let productDiscountedPrices = document.getElementsByClassName("current-price");
+
+// async function getAllProducts() {
+//   const response = await fetch(
+//     "https://yoco-students-api-server.herokuapp.com/v1/junction/"
+//   );
+//   const data = await response.json();
+//   console.log(`${data.length} length`);
+
+//   for (let i = 0; i < 3; i++) {
+//     productNames[i].innerHTML = data[i].name;
+//     productDetails[i].innerHTML = data[i].description;
+//     productOldPrices[i].innerHTML = data[i].price;
+//     productDiscountedPrices[i].innerHTML = data[i].discounted_price;
+//   }
+//   return data;
+// }
 
 async function getSingleProduct() {
   const response = await fetch(
     "https://yoco-students-api-server.herokuapp.com/v1/junction/product/1"
   );
   const data = await response.json();
-
-  console.log(JSON.stringify(data));
 }
 
-function populateProductName() {}
+function populateProductNames(jsonObj) {
+  for (let i = 0; i < productNames.length; i++) {
+    productNames[i].innerHTML = jsonObj[i];
+    console.log(jsonObj[i].name);
+  }
+}
 
-getSingleProduct();
-getAllProducts();
+//populateProductNames(getAllProducts());
 
 let loadMoreClicked = 0;
 
@@ -67,6 +83,7 @@ if (loadMoreButton) {
       </div>
       <div class="product-details">
         <h2 class="product-name">mac book pro</h2>
+        <h3 class="product-designer">by <strong>apple</strong></h3>
         <div class="product-description">
           Mac Book Pro is made by Apple Computers and contains a
           powerful i7 processor.
@@ -101,6 +118,7 @@ if (loadMoreButton) {
     </div>
     <div class="product-details">
       <h2 class="product-name">mac book pro</h2>
+      <h3 class="product-designer">by <strong>apple</strong></h3>
       <div class="product-description">
         Mac Book Pro is made by Apple Computers and contains a
         powerful i7 processor.
