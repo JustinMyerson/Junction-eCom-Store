@@ -28,25 +28,30 @@ let rowThreeDiv = document.getElementById("row-three");
 
 // HTML Elements to be rendered
 let productNames = document.getElementsByClassName("product-name");
-let productDetails = document.getElementsByClassName("product-details");
+let productDesigners = document.getElementsByClassName("product-designer");
+let productDetails = document.getElementsByClassName("product-description");
 let productOldPrices = document.getElementsByClassName("old-price");
 let productDiscountedPrices = document.getElementsByClassName("current-price");
+let productImages = document.getElementsByClassName("product-image-asset");
 
-// async function getAllProducts() {
-//   const response = await fetch(
-//     "https://yoco-students-api-server.herokuapp.com/v1/junction/"
-//   );
-//   const data = await response.json();
-//   console.log(`${data.length} length`);
+async function getAllProducts() {
+  const response = await fetch(
+    "https://yoco-students-api-server.herokuapp.com/v1/junction/"
+  );
+  const data = await response.json();
+  console.log(`${data.length} length`);
 
-//   for (let i = 0; i < 3; i++) {
-//     productNames[i].innerHTML = data[i].name;
-//     productDetails[i].innerHTML = data[i].description;
-//     productOldPrices[i].innerHTML = data[i].price;
-//     productDiscountedPrices[i].innerHTML = data[i].discounted_price;
-//   }
-//   return data;
-// }
+  for (let i = 0; i < 3; i++) {
+    productImages[i].src = data[i].image;
+    productNames[i].innerHTML = data[i].name;
+    productDesigners[i].innerHTML = data[i].company;
+    productDetails[i].innerHTML = data[i].description;
+    productOldPrices[i].innerHTML = data[i].price;
+    productDiscountedPrices[i].innerHTML = data[i].discounted_price;
+  }
+}
+
+getAllProducts();
 
 async function getSingleProduct() {
   const response = await fetch(
@@ -75,7 +80,7 @@ if (loadMoreButton) {
     <div class="product-div">
       <div class="product-card">
         <a href="single-product.html">
-          <img src="assets/macbook.png" alt="product-image" />
+          <img src="assets/macbook.png" alt="product-image" class="product-image-asset" />
         </a>
         <div class="product-image">
           <p class="product-image-text" id="discount">25% off</p>
@@ -110,7 +115,7 @@ if (loadMoreButton) {
   <div class="product-div">
     <div class="product-card">
       <a href="single-product.html">
-        <img src="assets/macbook.png" alt="product-image" />
+        <img src="assets/macbook.png" alt="product-image" class="product-image-asset" />
       </a>
       <div class="product-image">
         <p class="product-image-text" id="discount">25% off</p>
