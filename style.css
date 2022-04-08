@@ -54,24 +54,25 @@ body {
   line-height: 25.78px;
 }
 
+.cart-items {
+  font-family: Roboto;
+  font-size: 25px;
+}
+
 .cart-list {
   list-style: none;
   display: flex;
+  padding: 0px;
 }
 
 .cart-list li {
-  padding-left: 10px;
+  padding-left: 15px;
 }
 
 .cart-list li:last-of-type {
-  padding-left: 40px;
+  padding-left: 75px;
   width: 50px;
   height: 50px;
-}
-
-.cart-items {
-  margin-right: 45px;
-  margin-bottom: 38px;
 }
 
 .items-in-cart {
@@ -84,8 +85,8 @@ body {
 .items-in-cart-box {
   position: absolute;
   color: black;
-  top: 9px;
-  margin-left: 15px;
+  top: 6px;
+  margin-left: 13px;
 }
 
 .items-in-cart-text {
@@ -98,7 +99,7 @@ body {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  padding: 20px 10px;
+  padding: 10px 50px;
 }
 
 .navigation-items {
