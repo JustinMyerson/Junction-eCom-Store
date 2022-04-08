@@ -1,5 +1,5 @@
 /**
- * Function that accesses an old price HTML element, and converts into an integer to be used when calculating
+ * Function that accesses an old price HTML element, and converts into an integer when calculating
  * the percentage discount that has been applied
  * @param {Integer} originalPrice - The original price of the product
  * @param {Integer} discountPrice - The discounted price of the product
@@ -21,6 +21,17 @@ function calculateDiscountPercentage(originalPrice, discountPrice) {
   return `${percent}% off`;
 }
 
+let itemsInCart = 0;
+Array.from(document.getElementsByClassName("product-cart-button")).forEach(
+  function (addToCartButtons) {
+    addToCartButtons.addEventListener("click", () => {
+      itemsInCart += 1;
+      numberOfItemsInCart.innerHTML = itemsInCart.toString();
+      console.log("Item added to cart");
+    });
+  }
+);
+
 // Header
 // Product
 
@@ -40,6 +51,7 @@ let productOldPrices = document.getElementsByClassName("old-price");
 let productDiscountedPrices = document.getElementsByClassName("current-price");
 let productImages = document.getElementsByClassName("product-image-asset");
 let productDiscounts = document.getElementsByClassName("product-image-text");
+let productDiscountBox = document.getElementsByClassName("product-image");
 
 async function getAllProducts(productStart, productEnd) {
   const response = await fetch(
@@ -52,16 +64,25 @@ async function getAllProducts(productStart, productEnd) {
     productNames[i].innerHTML = data[i].name;
     productDesigners[i].innerHTML = data[i].company;
     productDetails[i].innerHTML = data[i].description;
-    productOldPrices[i].innerHTML = data[i].price;
-    productDiscountedPrices[i].innerHTML = data[i].discounted_price;
 
-    productDiscounts[i].innerHTML = calculateDiscountPercentage(
-      parseInt(data[i].price),
-      parseInt(data[i].discounted_price)
-    );
+    // Only render both prices and discounts if the old and current prices are different
+    if (data[i].price === data[i].discounted_price) {
+      productOldPrices[i].innerHTML = "blank"; // Want to render something here but make invisible
+      productOldPrices[i].style.color = "#f1e0e0";
+      productDiscountedPrices[i].innerHTML = data[i].discounted_price;
+      productDiscountBox[i].style.opacity = "0%";
+    } else {
+      productOldPrices[i].innerHTML = data[i].price;
+      productDiscountedPrices[i].innerHTML = data[i].discounted_price;
+      productDiscounts[i].innerHTML = calculateDiscountPercentage(
+        parseInt(data[i].price),
+        parseInt(data[i].discounted_price)
+      );
+    }
   }
 }
 
+// Get the first row of products to be displayed
 getAllProducts(0, 3);
 
 async function getSingleProduct() {
@@ -72,7 +93,6 @@ async function getSingleProduct() {
 }
 
 let loadMoreClicked = 0;
-
 if (loadMoreButton) {
   loadMoreButton.addEventListener("click", () => {
     loadMoreClicked += 1;
@@ -146,17 +166,6 @@ if (loadMoreButton) {
     }
   });
 }
-
-let itemsInCart = 0;
-Array.from(document.getElementsByClassName("product-cart-button")).forEach(
-  function (addToCartButtons) {
-    addToCartButtons.addEventListener("click", () => {
-      itemsInCart += 1;
-      numberOfItemsInCart.innerHTML = itemsInCart.toString();
-      console.log("Item added to cart");
-    });
-  }
-);
 
 /**
  * Function that accesses an old price HTML element, and converts into an integer to be used when calculating
