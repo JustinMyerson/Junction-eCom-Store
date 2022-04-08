@@ -21,17 +21,6 @@ function calculateDiscountPercentage(originalPrice, discountPrice) {
   return `${percent}% off`;
 }
 
-let itemsInCart = 0;
-Array.from(document.getElementsByClassName("product-cart-button")).forEach(
-  function (addToCartButtons) {
-    addToCartButtons.addEventListener("click", () => {
-      itemsInCart += 1;
-      numberOfItemsInCart.innerHTML = itemsInCart.toString();
-      console.log("Item added to cart");
-    });
-  }
-);
-
 // Header
 // Product
 
@@ -237,5 +226,16 @@ function calculateDiscounts(oldPriceArray, currentPriceArray) {
   }
   return discounts;
 }
+
+let itemsInCart = 0;
+Array.from(document.getElementsByClassName("product-cart-button")).forEach(
+  function (addToCartButtons) {
+    addToCartButtons.addEventListener("click", () => {
+      itemsInCart += 1;
+      numberOfItemsInCart.innerHTML = itemsInCart.toString();
+      console.log("Item added to cart");
+    });
+  }
+);
 
 // Footer

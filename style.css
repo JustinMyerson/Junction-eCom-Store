@@ -249,6 +249,7 @@ h1 {
   text-align: left;
   padding: 0px 10px;
   height: 480px;
+  justify-content: space-between;
   /* Height has to be less padding x2 */
 }
 
@@ -269,7 +270,7 @@ h1 {
   font-weight: 400;
   font-size: 40px;
   line-height: 35.16px;
-  padding-bottom: 10px;
+  padding-bottom: 0px;
 }
 
 .product-description {
@@ -277,13 +278,14 @@ h1 {
   font-weight: 300;
   font-size: 30px;
   line-height: 35px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .prices-and-icons {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-bottom: 20px;
 }
 
 .old-price {
