@@ -11,8 +11,14 @@
  */
 
 function calculateDiscountPercentage(originalPrice, discountPrice) {
-  let discount = (100 * (originalPrice - discountPrice)) / originalPrice;
-  return Math.round(discount);
+  let percent = 0;
+  let original = parseInt(originalPrice);
+  let discount = parseInt(discountPrice);
+  if (original !== 0) {
+    percent = (100 * (originalPrice - discountPrice)) / originalPrice;
+  }
+  percent = Math.round(percent);
+  return `${percent}% off`;
 }
 
 // Header
@@ -33,13 +39,13 @@ let productDetails = document.getElementsByClassName("product-description");
 let productOldPrices = document.getElementsByClassName("old-price");
 let productDiscountedPrices = document.getElementsByClassName("current-price");
 let productImages = document.getElementsByClassName("product-image-asset");
+let productDiscounts = document.getElementsByClassName("product-image-text");
 
 async function getAllProducts(productStart, productEnd) {
   const response = await fetch(
     "https://yoco-students-api-server.herokuapp.com/v1/junction/"
   );
   const data = await response.json();
-  console.log(`${data.length} length`);
 
   for (let i = productStart; i < productEnd; i++) {
     productImages[i].src = data[i].image;
@@ -48,6 +54,11 @@ async function getAllProducts(productStart, productEnd) {
     productDetails[i].innerHTML = data[i].description;
     productOldPrices[i].innerHTML = data[i].price;
     productDiscountedPrices[i].innerHTML = data[i].discounted_price;
+
+    productDiscounts[i].innerHTML = calculateDiscountPercentage(
+      parseInt(data[i].price),
+      parseInt(data[i].discounted_price)
+    );
   }
 }
 
@@ -74,7 +85,7 @@ if (loadMoreButton) {
           <img src="" alt="product-image" class="product-image-asset" />
         </a>
         <div class="product-image">
-          <p class="product-image-text" id="discount">25% off</p>
+          <p class="product-image-text" id="discount"></p>
         </div>
       </div>
       <div class="product-details">
@@ -108,7 +119,7 @@ if (loadMoreButton) {
         <img src="" alt="product-image" class="product-image-asset" />
       </a>
       <div class="product-image">
-        <p class="product-image-text" id="discount">25% off</p>
+        <p class="product-image-text" id="discount"></p>
       </div>
     </div>
     <div class="product-details">
@@ -164,9 +175,14 @@ function getOldPrices() {
       unformattedPrice.trim().substring(1).replace(/,/g, "").replace(/ /g, "")
     );
     priceArray.push(formattedPrice);
-    console.log(formattedPrice);
   });
   return priceArray;
+}
+
+function getOldPrice(unformattedOldPrice) {
+  console.log(unformattedOldPrice);
+  let unformattedPrice = unformattedOldPrice;
+  return formattedPrice;
 }
 
 /**
@@ -185,7 +201,6 @@ function getCurrentPrices() {
         unformattedPrice.trim().substring(1).replace(/,/g, "").replace(/ /g, "")
       );
       priceArray.push(formattedPrice);
-      console.log(formattedPrice);
     }
   );
   return priceArray;
@@ -195,8 +210,7 @@ const oldPriceArray = getOldPrices();
 const currentPriceArray = getCurrentPrices();
 
 /**
- * Function that accesses an old price HTML element, and converts into an integer to be used when calculating
- * the percentage discount that has been applied
+ * Function that takes in an array of old and new prices, and returns an array of discounts applied to each product in the array
  * @param {Integer} oldPriceArray - The original prices of the products
  * @param {Integer} currentPriceArray - The discounted prices of the products
  *
@@ -206,13 +220,13 @@ const currentPriceArray = getCurrentPrices();
  */
 
 function calculateDiscounts(oldPriceArray, currentPriceArray) {
+  let discounts = [];
   for (let i = 0; i < 3; i++) {
-    console.log(
+    discounts.push(
       `${calculateDiscountPercentage(oldPriceArray[i], currentPriceArray[i])}%`
     );
   }
+  return discounts;
 }
-
-calculateDiscounts(oldPriceArray, currentPriceArray);
 
 // Footer
