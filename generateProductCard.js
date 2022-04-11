@@ -50,6 +50,11 @@ function generateProductCard(product) {
     oldPrices.textContent = product.price;
   }
 
+  // Create an event listener for the add to cart button
+  cartButton.addEventListener("click", () => {
+    onAddToCart(product);
+  });
+
   ulProducts.classList.add("product-list");
   listItem.classList.add("product-list-item");
   productDiv.classList.add("product-div");
@@ -95,4 +100,7 @@ function generateProductCard(product) {
   return ulProducts;
 }
 
+function onAddToCart(product) {
+  console.log(product.id);
+}
 export { generateProductCard };

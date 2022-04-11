@@ -1,14 +1,14 @@
+import { generateProductCard } from "./generateProductCard.js";
+
 /**
  * Function that displays the product cards for us
+ * Each row contains three products, and hence every fourth product gets
+ * put onto a new row to be displayed
  * @param {json} products
  *
  * @example
  * displayProducts(listOfProducts)
  */
-
-import { generateProductCard } from "./generateProductCard.js";
-
-// Need to figure out a trick for row one two three
 
 function displayProducts(products) {
   let row = 1;
