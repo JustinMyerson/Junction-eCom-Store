@@ -8,11 +8,14 @@
 
 import { generateProductCard } from "./generateProductCard.js";
 
+// Need to figure out a trick for row one two three
+
 function displayProducts(products) {
+  console.log("test");
   const displayContainer = document.getElementById("display-container");
   displayContainer.textContent = "";
-  products.array.forEach((element) => {
-    generateProductCard(element);
+  products.array.forEach((products) => {
+    generateProductCard(products);
   });
 }
 

@@ -4,6 +4,7 @@ import { displayProducts } from "./displayProducts.js";
 
 async function main() {
   const products = await doFetch(API_URL);
+  displayProducts(products);
   console.log(products);
 }
 
