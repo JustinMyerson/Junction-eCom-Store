@@ -13,7 +13,6 @@ import { generateProductCard } from "./generateProductCard.js";
 function displayProducts(products) {
   const displayContainer = document.getElementById("display-container");
   products.forEach((products) => {
-    console.log(products);
     displayContainer.appendChild(generateProductCard(products));
   });
 }

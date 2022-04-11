@@ -83,7 +83,7 @@ async function getAllProducts(productStart, productEnd) {
 }
 
 // Get the first row of products to be displayed
-getAllProducts(0, 3);
+// getAllProducts(0, 3);
 
 async function getSingleProduct() {
   const response = await fetch(

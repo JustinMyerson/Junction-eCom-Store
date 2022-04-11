@@ -6,26 +6,47 @@
  */
 
 function generateProductCard(product) {
+  console.log(product.name);
+
+  const productRow = document.createElement("div");
+  const ulProducts = document.createElement("ul");
   const listItem = document.createElement("li");
   const productDiv = document.createElement("div");
   const productCard = document.createElement("div");
   const singleProduct = document.createElement("a");
   const productImageAsset = document.createElement("img");
+  productImageAsset.src = product.image;
   const productImageDiv = document.createElement("div");
   const productImageText = document.createElement("p");
   const productDetails = document.createElement("div");
   const productName = document.createElement("h2");
+  productName.textContent = product.name;
   const productDesigner = document.createElement("h3");
+  productDesigner.textContent = product.company;
   const strongDesigner = document.createElement("strong");
   const productDescription = document.createElement("div");
+  productDescription.textContent = product.description;
   const pricesAndIcons = document.createElement("div");
   const prices = document.createElement("div");
   const oldPrices = document.createElement("div");
   const currentPrices = document.createElement("div");
+  currentPrices.textContent = product.discounted_price;
   const productCartButton = document.createElement("div");
   const cartButton = document.createElement("button");
   const buttonImage = document.createElement("img");
+  buttonImage.src = "/assets/add-to-cart.png";
 
+  // Set the prices of the product,
+  // but don't render both if old and current price are the same
+  if (product.price === product.discounted_price) {
+    oldPrices.textContent = "blank";
+    oldPrices.style.color = "#f1e0e0";
+  } else {
+    oldPrices.textContent = product.price;
+  }
+
+  productRow.classList.add("row-one");
+  ulProducts.classList.add("product-list");
   listItem.classList.add("product-list-item");
   productDiv.classList.add("product-div");
   productCard.classList.add("product-card");
@@ -47,6 +68,8 @@ function generateProductCard(product) {
   cartButton.id = "add-to-cart";
   buttonImage.classList.add("cart-image");
 
+  ulProducts.appendChild(listItem);
+  listItem.appendChild(productDiv);
   productDiv.appendChild(productCard);
   productCard.appendChild(singleProduct);
   singleProduct.appendChild(productImageAsset);
@@ -65,8 +88,8 @@ function generateProductCard(product) {
   productCartButton.appendChild(cartButton);
   cartButton.appendChild(buttonImage);
 
-  listItem.appendChild(productDiv);
-  return listItem;
+  productRow.appendChild(ulProducts);
+  return productRow;
 }
 
 export { generateProductCard };
