@@ -11,9 +11,17 @@ import { generateProductCard } from "./generateProductCard.js";
 // Need to figure out a trick for row one two three
 
 function displayProducts(products) {
-  const displayContainer = document.getElementById("display-container");
+  let row = 1;
+  let counter = 0;
+  let displayRow = document.getElementById(`row-${row}`);
+
   products.forEach((products) => {
-    displayContainer.appendChild(generateProductCard(products));
+    if (counter === 3 || counter === 6 || counter === 9) {
+      row += 1;
+      displayRow = document.getElementById(`row-${row}`);
+    }
+    displayRow.appendChild(generateProductCard(products));
+    counter += 1;
   });
 }
 

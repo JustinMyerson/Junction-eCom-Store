@@ -167,9 +167,9 @@ h1 {
   width: 100%;
 }
 
-.row-one,
-.row-two,
-.row-three {
+.row-1,
+.row-2,
+.row-3 {
   display: flex;
   flex-direction: row;
 }

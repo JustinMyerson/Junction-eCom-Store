@@ -1,3 +1,5 @@
+import { calculateDiscountPercentage } from "./calculateDiscount.js";
+
 /**
  * Function that creates a individual product card by generating the HTML needed
  * and populates it with information from the end point
@@ -6,9 +8,6 @@
  */
 
 function generateProductCard(product) {
-  console.log(product.name);
-
-  const productRow = document.createElement("div");
   const ulProducts = document.createElement("ul");
   const listItem = document.createElement("li");
   const productDiv = document.createElement("div");
@@ -36,6 +35,12 @@ function generateProductCard(product) {
   const buttonImage = document.createElement("img");
   buttonImage.src = "/assets/add-to-cart.png";
 
+  // Set the discount of the product if prices are not the same
+  productImageText.textContent = calculateDiscountPercentage(
+    product.price,
+    product.discounted_price
+  );
+
   // Set the prices of the product,
   // but don't render both if old and current price are the same
   if (product.price === product.discounted_price) {
@@ -45,7 +50,6 @@ function generateProductCard(product) {
     oldPrices.textContent = product.price;
   }
 
-  productRow.classList.add("row-one");
   ulProducts.classList.add("product-list");
   listItem.classList.add("product-list-item");
   productDiv.classList.add("product-div");
@@ -68,7 +72,6 @@ function generateProductCard(product) {
   cartButton.id = "add-to-cart";
   buttonImage.classList.add("cart-image");
 
-  ulProducts.appendChild(listItem);
   listItem.appendChild(productDiv);
   productDiv.appendChild(productCard);
   productCard.appendChild(singleProduct);
@@ -88,8 +91,8 @@ function generateProductCard(product) {
   productCartButton.appendChild(cartButton);
   cartButton.appendChild(buttonImage);
 
-  productRow.appendChild(ulProducts);
-  return productRow;
+  ulProducts.appendChild(listItem);
+  return ulProducts;
 }
 
 export { generateProductCard };
