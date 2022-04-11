@@ -1,3 +1,13 @@
+import { API_URL } from "./shared.js";
+import { doFetch } from "./utils.js";
+
+function main() {
+  const products = await doFetch(API_URL);
+  console.log(products)
+}
+
+main();
+
 /**
  * Function that accesses an old price HTML element, and converts into an integer when calculating
  * the percentage discount that has been applied
