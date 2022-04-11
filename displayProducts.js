@@ -11,11 +11,10 @@ import { generateProductCard } from "./generateProductCard.js";
 // Need to figure out a trick for row one two three
 
 function displayProducts(products) {
-  console.log("test");
   const displayContainer = document.getElementById("display-container");
-  displayContainer.textContent = "";
-  products.array.forEach((products) => {
-    generateProductCard(products);
+  products.forEach((products) => {
+    console.log(products);
+    displayContainer.appendChild(generateProductCard(products));
   });
 }
 
