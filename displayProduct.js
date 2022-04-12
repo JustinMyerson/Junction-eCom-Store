@@ -12,7 +12,8 @@ import { product } from "./product.js";
  */
 
 function displayProduct(singleProduct) {
-  generateSingleProductCard(singleProduct);
+  let mainDiv = document.getElementById("main");
+  mainDiv.appendChild(generateSingleProductCard(singleProduct));
 }
 
 export { displayProduct };

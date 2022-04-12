@@ -209,7 +209,7 @@ h1 {
   line-height: 35px;
 }
 
-.prices-and-buy {
+.prices {
   display: flex;
   flex-direction: column;
   padding-top: 145px;
@@ -256,7 +256,7 @@ h1 {
   justify-content: center;
 }
 
-.load-more-button {
+.buy-now-button {
   background-color: #dbafae;
   color: white;
   width: 594px;
@@ -267,6 +267,9 @@ h1 {
   font-weight: 400;
   font-size: 40px;
   line-height: 47px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Footer */

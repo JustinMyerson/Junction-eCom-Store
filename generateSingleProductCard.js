@@ -8,7 +8,7 @@ import { calculateDiscountPercentage } from "./calculateDiscount.js";
  */
 
 function generateSingleProductCard(product) {
-  const mainDiv = document.getElementById("main");
+  const mainDiv = document.getElementById("display-container");
   const productDiv = document.createElement("div");
   const productCard = document.createElement("div");
   const singleProduct = document.createElement("a");
@@ -31,9 +31,6 @@ function generateSingleProductCard(product) {
   const currentPrices = document.createElement("div");
   currentPrices.textContent = product.discounted_price;
   const productCartButton = document.createElement("div");
-  const cartButton = document.createElement("button");
-  const buttonImage = document.createElement("img");
-  buttonImage.src = "/assets/add-to-cart.png";
 
   // Set the discount of the product if prices are not the same
   productImageText.textContent = calculateDiscountPercentage(
@@ -42,9 +39,9 @@ function generateSingleProductCard(product) {
   );
 
   // Create an event listener for the add to cart button
-  cartButton.addEventListener("click", () => {
-    onAddToCart(product);
-  });
+  // cartButton.addEventListener("click", () => {
+  //   onAddToCart(product);
+  // });
 
   productDiv.classList.add("product-div");
   productCard.classList.add("product-card");
@@ -61,18 +58,17 @@ function generateSingleProductCard(product) {
   prices.classList.add("prices");
   oldPrices.classList.add("old-price");
   currentPrices.classList.add("current-price");
-  productCartButton.classList.add("product-cart-button");
-  cartButton.id = "add-to-cart";
-  buttonImage.classList.add("cart-image");
+  productCartButton.classList.add("buy-now-button");
+  productCartButton.textContent = "ADD TO CART";
 
   productDiv.appendChild(productCard);
   productCard.appendChild(singleProduct);
   singleProduct.appendChild(productImageAsset);
   productCard.appendChild(productImageDiv);
   productImageDiv.appendChild(productImageText);
-  productDiv.appendChild(productDetails);
   productDetails.appendChild(productName);
   productDetails.appendChild(productDesigner);
+  productDiv.appendChild(productDetails);
   productDesigner.appendChild(strongDesigner);
   productDetails.appendChild(productDescription);
   productDetails.appendChild(pricesAndIcons);
@@ -80,8 +76,6 @@ function generateSingleProductCard(product) {
   prices.appendChild(oldPrices);
   prices.appendChild(currentPrices);
   pricesAndIcons.appendChild(productCartButton);
-  productCartButton.appendChild(cartButton);
-  cartButton.appendChild(buttonImage);
 
   if (product.price === product.discounted_price) {
     oldPrices.textContent = "blank";
