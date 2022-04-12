@@ -1,12 +1,12 @@
 import { API_URL } from "./shared.js";
 import { doFetch } from "./utils.js";
+import { generateProductCard } from "./generateProductCard.js";
 
 async function product() {
-  const params = new URLSearchParams(API_URL);
-  console.log(params.has("yoco"));
-
-  //console.log(doFetch(`${API_URL}product/${params}`));
+  const productEndpointURL = window.location.search.slice(-1);
+  console.log(`${API_URL}product/${productEndpointURL}`);
+  //generateProductCard(product);
+  return `${API_URL}product/${productEndpointURL}`;
 }
 
-const currentProduct = product();
-console.log(currentProduct);
+doFetch(product());

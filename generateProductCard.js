@@ -14,7 +14,6 @@ function generateProductCard(product) {
   const productCard = document.createElement("div");
   const singleProduct = document.createElement("a");
   singleProduct.setAttribute("href", `/product.html?id=${product.id}`);
-  singleProduct.href = `/product.html?id=${product.id}`;
   const productImageAsset = document.createElement("img");
   productImageAsset.src = product.image;
   const productImageDiv = document.createElement("div");
@@ -43,15 +42,6 @@ function generateProductCard(product) {
     product.discounted_price
   );
 
-  // Set the prices of the product,
-  // but don't render both if old and current price are the same
-  if (product.price === product.discounted_price) {
-    oldPrices.textContent = "blank";
-    oldPrices.style.color = "#f1e0e0";
-  } else {
-    oldPrices.textContent = product.price;
-  }
-
   // Create an event listener for the add to cart button
   cartButton.addEventListener("click", () => {
     onAddToCart(product);
@@ -61,7 +51,6 @@ function generateProductCard(product) {
   listItem.classList.add("product-list-item");
   productDiv.classList.add("product-div");
   productCard.classList.add("product-card");
-  singleProduct.href = "product.html";
   productImageAsset.classList.add("product-image-asset");
   productImageDiv.classList.add("product-image");
   productImageText.classList.add("product-image-text");
@@ -98,11 +87,31 @@ function generateProductCard(product) {
   productCartButton.appendChild(cartButton);
   cartButton.appendChild(buttonImage);
 
+  if (product.price === product.discounted_price) {
+    oldPrices.textContent = "blank";
+    oldPrices.style.color = "#f1e0e0";
+    productImageText.textContent = "";
+    productImageDiv.style.backgroundColor = "transparent";
+  } else {
+    oldPrices.textContent = product.price;
+  }
+
   ulProducts.appendChild(listItem);
   return ulProducts;
 }
 
+let currentNumberOfItems = 0;
+
+/**
+ * Function to update the number of items in the cart every time
+ * that a add to cart button is clicked
+ * @param {productObject} product
+ * @returns Product ID
+ */
 function onAddToCart(product) {
-  console.log(product.id);
+  let numberOfItemsInCart = document.getElementById("items-in-cart-text");
+  currentNumberOfItems += 1;
+  numberOfItemsInCart.textContent = currentNumberOfItems;
+  return product.id;
 }
 export { generateProductCard };
