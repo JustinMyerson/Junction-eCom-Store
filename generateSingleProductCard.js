@@ -7,9 +7,8 @@ import { calculateDiscountPercentage } from "./calculateDiscount.js";
  * @returns
  */
 
-function generateProductCard(product) {
-  const ulProducts = document.createElement("ul");
-  const listItem = document.createElement("li");
+function generateSingleProductCard(product) {
+  const mainDiv = document.getElementById("main");
   const productDiv = document.createElement("div");
   const productCard = document.createElement("div");
   const singleProduct = document.createElement("a");
@@ -47,8 +46,6 @@ function generateProductCard(product) {
     onAddToCart(product);
   });
 
-  ulProducts.classList.add("product-list");
-  listItem.classList.add("product-list-item");
   productDiv.classList.add("product-div");
   productCard.classList.add("product-card");
   productImageAsset.classList.add("product-image-asset");
@@ -68,7 +65,6 @@ function generateProductCard(product) {
   cartButton.id = "add-to-cart";
   buttonImage.classList.add("cart-image");
 
-  listItem.appendChild(productDiv);
   productDiv.appendChild(productCard);
   productCard.appendChild(singleProduct);
   singleProduct.appendChild(productImageAsset);
@@ -96,8 +92,8 @@ function generateProductCard(product) {
     oldPrices.textContent = product.price;
   }
 
-  ulProducts.appendChild(listItem);
-  return ulProducts;
+  mainDiv.appendChild(productDiv);
+  return mainDiv;
 }
 
 let currentNumberOfItems = 0;
@@ -115,4 +111,4 @@ function onAddToCart(product) {
   return product.id;
 }
 
-export { generateProductCard };
+export { generateSingleProductCard };
