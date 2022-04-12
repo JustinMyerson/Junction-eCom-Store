@@ -8,6 +8,4 @@ async function doFetch(url) {
   }
 }
 
-async function calculateDiscount() {}
-
-export { doFetch, calculateDiscount };
+export { doFetch };

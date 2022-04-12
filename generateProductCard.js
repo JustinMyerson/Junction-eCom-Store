@@ -15,6 +15,7 @@ function generateProductCard(product) {
   const singleProduct = document.createElement("a");
   const productImageAsset = document.createElement("img");
   productImageAsset.src = product.image;
+  // productImageAsset.href = `/product.html?id=${1919191}`;
   const productImageDiv = document.createElement("div");
   const productImageText = document.createElement("p");
   const productDetails = document.createElement("div");
@@ -59,7 +60,7 @@ function generateProductCard(product) {
   listItem.classList.add("product-list-item");
   productDiv.classList.add("product-div");
   productCard.classList.add("product-card");
-  singleProduct.href = "single-product.html";
+  singleProduct.href = "product.html";
   productImageAsset.classList.add("product-image-asset");
   productImageDiv.classList.add("product-image");
   productImageText.classList.add("product-image-text");
