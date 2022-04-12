@@ -4,9 +4,10 @@ import { generateProductCard } from "./generateProductCard.js";
 
 async function product() {
   const productEndpointURL = window.location.search.slice(-1);
-  console.log(`${API_URL}product/${productEndpointURL}`);
-  //generateProductCard(product);
-  return `${API_URL}product/${productEndpointURL}`;
+  const url = `${API_URL}product/${productEndpointURL}`;
+
+  const currentProduct = doFetch(url);
+  return currentProduct;
 }
 
-doFetch(product());
+product();
