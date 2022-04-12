@@ -16,12 +16,14 @@ function displayProducts(products) {
   let displayRow = document.getElementById(`row-${row}`);
 
   products.forEach((products) => {
-    if (counter === 3 || counter === 6 || counter === 9) {
-      row += 1;
-      displayRow = document.getElementById(`row-${row}`);
-    }
-    displayRow.appendChild(generateProductCard(products));
-    counter += 1;
+    try {
+      if (counter === 3 || counter === 6 || counter === 9) {
+        row += 1;
+        displayRow = document.getElementById(`row-${row}`);
+      }
+      displayRow.appendChild(generateProductCard(products));
+      counter += 1;
+    } catch {}
   });
 }
 

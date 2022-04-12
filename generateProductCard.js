@@ -13,9 +13,10 @@ function generateProductCard(product) {
   const productDiv = document.createElement("div");
   const productCard = document.createElement("div");
   const singleProduct = document.createElement("a");
+  singleProduct.setAttribute("href", `/product.html?id=${product.id}`);
+  singleProduct.href = `/product.html?id=${product.id}`;
   const productImageAsset = document.createElement("img");
   productImageAsset.src = product.image;
-  // productImageAsset.href = `/product.html?id=${1919191}`;
   const productImageDiv = document.createElement("div");
   const productImageText = document.createElement("p");
   const productDetails = document.createElement("div");
