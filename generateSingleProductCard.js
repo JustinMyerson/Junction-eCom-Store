@@ -39,9 +39,10 @@ function generateSingleProductCard(product) {
   );
 
   // Create an event listener for the add to cart button
-  // cartButton.addEventListener("click", () => {
-  //   onAddToCart(product);
-  // });
+  productCartButton.addEventListener("click", () => {
+    console.log("clicked");
+    onAddToCart(product);
+  });
 
   productDiv.classList.add("product-div");
   productCard.classList.add("product-card");

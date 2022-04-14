@@ -159,9 +159,12 @@ h1 {
 .main {
   padding-top: 100px;
   padding-bottom: 200px;
-  display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.all-products {
+  padding: 0 10px;
 }
 
 .product-div {
@@ -171,15 +174,11 @@ h1 {
   justify-content: space-between;
 }
 
-.product-card {
-  width: 800px;
-  height: 800px;
-}
-
 .product-details {
   font-family: "Roboto";
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding-left: 50px;
   width: 900px;
 }
@@ -207,6 +206,29 @@ h1 {
   font-weight: 300;
   font-size: 30px;
   line-height: 35px;
+}
+
+.product-image {
+  position: absolute;
+  background-color: black;
+  background: rgba(0, 0, 0, 0.5);
+  left: 68.8%;
+  right: 0%;
+  top: 2.97%;
+  bottom: 90.04%;
+}
+
+.product-image-text {
+  text-transform: uppercase;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 35px;
+  text-align: right;
+  margin-top: 16px;
+  margin-right: 12px;
+  color: white;
 }
 
 .prices {
