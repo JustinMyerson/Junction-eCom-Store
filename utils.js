@@ -9,6 +9,8 @@ async function doFetch(url) {
   }
 }
 
-function calculateVat() {}
+function calculateVat(amount) {
+  return amount * 0.15;
+}
 
 export { doFetch, calculateVat };

@@ -8,9 +8,18 @@ const productsInCartDiv = document.getElementById("products-in-cart");
 const costsDiv = document.getElementById("costs");
 const itemsInCartText = document.getElementById("items-in-cart-heading");
 const productListUL = document.createElement("ul");
+productListUL.style.listStyle = "none";
 productListUL.classList.add("product-list-ul");
 const costs = document.createElement("div");
 costs.classList.add("checkout-price-list");
+
+const subtotalText = document.getElementById("subtotal-text");
+const vatText = document.getElementById("vat-text");
+const totalText = document.getElementById("total-text");
+
+const subtotalAmount = document.getElementById("subtotal-amount");
+const vatAmount = document.getElementById("vat-amount");
+const totalAmount = document.getElementById("total-amount");
 
 cartDiv.appendChild(productsInCartDiv);
 cartDiv.appendChild(costsDiv);
@@ -42,17 +51,35 @@ function createClearNowButton() {
 }
 
 function renderCheckout() {
+  let subTotal = 0;
+  let vat = 0;
+  let total = 0;
+
   if (localStorage.length !== 0) {
     itemsInCartText.innerText = `Your cart has ${localStorage.length} items`;
     itemsInCartText.style.justifyContent = "left";
     cartDivHeadings.appendChild(createClearNowButton());
-    console.log(localStorage.length);
+
+    subtotalText.innerText = "Sub-total:";
+    vatText.innerText = "VAT:";
+    totalText.innerText = "Total";
+
     for (let i = 0; i < localStorage.length; i++) {
+      const currentProduct = JSON.parse(
+        localStorage.getItem(localStorage.key(i))
+      );
+      subTotal += currentProduct.discounted_price;
       const productListLI = document.createElement("li");
       productListLI.classList.add("product-list-li");
+      productListLI.innerText = currentProduct.name;
       productListUL.appendChild(productListLI);
     }
 
+    subtotalAmount.innerText = `R ${subTotal}`;
+    vat = calculateVat(subTotal).toFixed(2);
+    vatAmount.innerText = `R ${vat}`;
+    total = parseFloat(vat) + parseFloat(subTotal);
+    totalAmount.innerText = `R ${total}`;
     productsInCartDiv.appendChild(productListUL);
   }
 }
