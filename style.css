@@ -322,8 +322,16 @@ h1 {
 .costs {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   text-align: right;
   padding-right: 10px;
+  font-size: 35px;
+  font-family: "Roboto";
+}
+
+.product-list-li {
+  font-size: 35px;
+  font-family: "Roboto";
 }
 
 .items-in-cart-heading {

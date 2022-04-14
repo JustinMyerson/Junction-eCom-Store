@@ -16,10 +16,14 @@ costs.classList.add("checkout-price-list");
 const subtotalText = document.getElementById("subtotal-text");
 const vatText = document.getElementById("vat-text");
 const totalText = document.getElementById("total-text");
+totalText.style.fontWeight = 700;
+totalText.style.fontSize = "45px";
 
 const subtotalAmount = document.getElementById("subtotal-amount");
 const vatAmount = document.getElementById("vat-amount");
 const totalAmount = document.getElementById("total-amount");
+totalAmount.style.fontWeight = 700;
+totalAmount.style.fontSize = "45px";
 
 cartDiv.appendChild(productsInCartDiv);
 cartDiv.appendChild(costsDiv);
@@ -72,6 +76,7 @@ function renderCheckout() {
       const productListLI = document.createElement("li");
       productListLI.classList.add("product-list-li");
       productListLI.innerText = currentProduct.name;
+      productListLI.style.border = "1px";
       productListUL.appendChild(productListLI);
     }
 
