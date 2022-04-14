@@ -9,4 +9,6 @@ async function doFetch(url) {
   }
 }
 
-export { doFetch };
+function calculateVat() {}
+
+export { doFetch, calculateVat };
