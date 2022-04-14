@@ -308,7 +308,17 @@ h1 {
   border: black;
   border-style: solid;
   border-width: 1px;
-  height: 100px;
+  height: auto;
+}
+
+.items-in-cart-heading {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 53px;
+  display: flex;
+  justify-content: center;
 }
 
 .product-cart-button {
