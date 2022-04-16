@@ -329,6 +329,29 @@ h1 {
   font-family: "Roboto";
 }
 
+.product-div-checkout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "Roboto";
+  padding: 10px;
+}
+
+.product-div-checkout-left {
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.product-div-checkout-right {
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.product-image-checkout {
+  width: 100px;
+  height: 100px;
+}
+
 .product-list-li {
   font-size: 35px;
   font-family: "Roboto";

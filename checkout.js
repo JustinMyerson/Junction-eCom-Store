@@ -31,6 +31,7 @@ cartDiv.appendChild(costsDiv);
 function renderEmptyCart() {
   itemsInCartText.innerText = "Your cart is empty!";
   itemsInCartText.style.justifyContent = "center";
+  renderCheckout();
 }
 
 function createClearNowButton() {
@@ -72,18 +73,37 @@ function renderCheckout() {
       const currentProduct = JSON.parse(
         localStorage.getItem(localStorage.key(i))
       );
-      subTotal += currentProduct.discounted_price;
+
       const productListLI = document.createElement("li");
       productListLI.classList.add("product-list-li");
-      productListLI.innerText = currentProduct.name;
       productListLI.style.border = "1px";
+      const productDiv = document.createElement("div");
+      productDiv.classList.add("product-div-checkout");
+      const productDivLeft = document.createElement("div");
+      productDivLeft.classList.add("product-div-checkout-left");
+      const productImage = document.createElement("img");
+      productImage.classList.add("product-image-checkout");
+      productDivLeft.innerText = currentProduct.name;
+      productImage.src = currentProduct.image;
+
+      const productDivRight = document.createElement("div");
+      productDivRight.classList.add("product-div-checkout-right");
+      productDivRight.innerText = `R${currentProduct.discounted_price}`;
+
+      productDivLeft.append(productImage);
+      productDiv.appendChild(productDivLeft);
+      productDiv.appendChild(productDivRight);
+      productListLI.appendChild(productDiv);
       productListUL.appendChild(productListLI);
+
+      subTotal += currentProduct.discounted_price;
     }
 
+    //subtotalAmount = subtotalAmount.toFixed(2);
     subtotalAmount.innerText = `R ${subTotal}`;
     vat = calculateVat(subTotal).toFixed(2);
     vatAmount.innerText = `R ${vat}`;
-    total = parseFloat(vat) + parseFloat(subTotal);
+    total = (parseFloat(vat) + parseFloat(subTotal)).toFixed(2);
     totalAmount.innerText = `R ${total}`;
     productsInCartDiv.appendChild(productListUL);
   }
