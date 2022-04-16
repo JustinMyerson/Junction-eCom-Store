@@ -81,16 +81,24 @@ function renderCheckout() {
       productDiv.classList.add("product-div-checkout");
       const productDivLeft = document.createElement("div");
       productDivLeft.classList.add("product-div-checkout-left");
+      const productName = document.createElement("h2");
+      productName.classList.add("product-name-checkout");
       const productImage = document.createElement("img");
       productImage.classList.add("product-image-checkout");
-      productDivLeft.innerText = currentProduct.name;
+      productName.innerText = currentProduct.name;
       productImage.src = currentProduct.image;
 
       const productDivRight = document.createElement("div");
       productDivRight.classList.add("product-div-checkout-right");
       productDivRight.innerText = `R${currentProduct.discounted_price}`;
+      const removeButton = document.createElement("a");
+      removeButton.classList.add("remove-button-checkout");
+      removeButton.innerText = "Remove";
 
       productDivLeft.append(productImage);
+      productDivLeft.append(productName);
+
+      productDivRight.append(removeButton);
       productDiv.appendChild(productDivLeft);
       productDiv.appendChild(productDivRight);
       productListLI.appendChild(productDiv);
