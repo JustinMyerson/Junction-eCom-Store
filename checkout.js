@@ -72,7 +72,9 @@ function renderCheckout() {
   }
 
   if (localStorage.length !== 0) {
-    itemsInCartText.innerText = `Your cart has ${localStorage.length} items`;
+    const productsInCart = JSON.parse(localStorage.getItem("Products"));
+
+    itemsInCartText.innerText = `Your cart has ${productsInCart.length} items`;
     itemsInCartText.style.justifyContent = "left";
     cartDivHeadings.appendChild(createClearNowButton());
 
@@ -80,11 +82,9 @@ function renderCheckout() {
     vatText.innerText = "VAT:";
     totalText.innerText = "Total";
 
-    for (let i = 0; i < localStorage.length; i++) {
-      const currentProduct = JSON.parse(
-        localStorage.getItem(localStorage.key(i))
-      );
-
+    productsInCart.forEach((product) => {
+      const currentProduct = product;
+      console.log(currentProduct.name);
       const productListLI = document.createElement("li");
       productListLI.classList.add("product-list-li");
       productListLI.style.border = "1px";
@@ -116,15 +116,15 @@ function renderCheckout() {
       productListUL.appendChild(productListLI);
 
       subTotal += currentProduct.discounted_price;
-    }
 
-    //subtotalAmount = subtotalAmount.toFixed(2);
-    subtotalAmount.innerText = `R ${subTotal}`;
-    vat = calculateVat(subTotal).toFixed(2);
-    vatAmount.innerText = `R ${vat}`;
-    total = (parseFloat(vat) + parseFloat(subTotal)).toFixed(2);
-    totalAmount.innerText = `R ${total}`;
-    productsInCartDiv.appendChild(productListUL);
+      //subtotalAmount = subtotalAmount.toFixed(2);
+      subtotalAmount.innerText = `R ${subTotal}`;
+      vat = calculateVat(subTotal).toFixed(2);
+      vatAmount.innerText = `R ${vat}`;
+      total = (parseFloat(vat) + parseFloat(subTotal)).toFixed(2);
+      totalAmount.innerText = `R ${total}`;
+      productsInCartDiv.appendChild(productListUL);
+    });
   }
 }
 
