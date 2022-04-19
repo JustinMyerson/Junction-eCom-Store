@@ -32,12 +32,6 @@ function generateSingleProductCard(product) {
   currentPrices.textContent = product.discounted_price;
   const productCartButton = document.createElement("div");
 
-  // Set the discount of the product if prices are not the same
-  productImageText.textContent = calculateDiscountPercentage(
-    product.price,
-    product.discounted_price
-  );
-
   // Create an event listener for the add to cart button
   productCartButton.addEventListener("click", () => {
     console.log("clicked");
@@ -65,8 +59,6 @@ function generateSingleProductCard(product) {
   productDiv.appendChild(productCard);
   productCard.appendChild(singleProduct);
   singleProduct.appendChild(productImageAsset);
-  productCard.appendChild(productImageDiv);
-  productImageDiv.appendChild(productImageText);
   productDetails.appendChild(productName);
   productDetails.appendChild(productDesigner);
   productDiv.appendChild(productDetails);
@@ -80,7 +72,7 @@ function generateSingleProductCard(product) {
 
   if (product.price === product.discounted_price) {
     oldPrices.textContent = "blank";
-    oldPrices.style.color = "#f1e0e0";
+    oldPrices.style.color = "white";
     productImageText.textContent = "";
     productImageDiv.style.backgroundColor = "transparent";
   } else {
