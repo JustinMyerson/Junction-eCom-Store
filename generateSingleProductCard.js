@@ -80,7 +80,7 @@ function generateSingleProductCard(product) {
 
   if (product.price === product.discounted_price) {
     oldPrices.textContent = "blank";
-    oldPrices.style.color = "#f1e0e0";
+    oldPrices.style.color = "white";
     productImageText.textContent = "";
     productImageDiv.style.backgroundColor = "transparent";
   } else {

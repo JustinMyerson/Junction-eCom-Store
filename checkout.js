@@ -31,7 +31,6 @@ cartDiv.appendChild(costsDiv);
 function renderEmptyCart() {
   itemsInCartText.innerText = "Your cart is empty!";
   itemsInCartText.style.justifyContent = "center";
-  renderCheckout();
 }
 
 function createClearNowButton() {
@@ -59,6 +58,8 @@ function renderCheckout() {
   let subTotal = 0;
   let vat = 0;
   let total = 0;
+
+  renderEmptyCart();
 
   if (localStorage.length !== 0) {
     itemsInCartText.innerText = `Your cart has ${localStorage.length} items`;
