@@ -1,20 +1,13 @@
 function addToCart(product) {
+  let productArray = [];
   if (localStorage.length === 0) {
-    const productArray = new Array();
-    localStorage.setItem(`${product.id}`, JSON.stringify(product));
-    const item = JSON.parse(localStorage.getItem(`${product.id}`));
-    productArray.push(item);
+    productArray.push(product);
+    localStorage.setItem("Products", JSON.stringify(productArray));
+  } else {
+    productArray = JSON.parse(localStorage.getItem("Products"));
+    productArray.push(product);
+    localStorage.setItem("Products", JSON.stringify(productArray));
   }
-  localStorage.setItem(`${product.id}`, JSON.stringify(product));
-  const item = JSON.parse(localStorage.getItem(`${product.id}`));
-
-  // if (localStorage.getItem(cart) === null) {
-  //   const cart = new Array();
-  //   window.localStorage.setItem(product.id, product);
-  //   cart.push(product);
-  // }
-
-  //cart.push(product);
 }
 
 function removeFromCart(product) {}
