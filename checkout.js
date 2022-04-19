@@ -1,8 +1,6 @@
 import { removeFromCart } from "./shoppingCart.js";
 import { calculateVat } from "./utils.js";
 
-// Needs to get the products from local storage
-
 const cartDivHeadings = document.getElementById("cart-headings");
 const cartDiv = document.getElementById("cart-container");
 const productsInCartDiv = document.getElementById("products-in-cart");
@@ -31,6 +29,11 @@ totalAmount.style.fontSize = "45px";
 cartDiv.appendChild(productsInCartDiv);
 cartDiv.appendChild(costsDiv);
 
+/**
+ * Renders the cart empty when the clear now button is clicked
+ * Calls renderCheckout() to render the necessary HTML elements
+ */
+
 function renderEmptyCart() {
   const div = document.getElementById("cart-headings");
   const costsDiv = document.getElementById("costs");
@@ -42,6 +45,12 @@ function renderEmptyCart() {
   clearNow.parentElement.removeChild(clearNow);
   renderCheckout();
 }
+
+/**
+ *
+ * @returns Returns a button that when clicked,
+ * clears the checkout div so that when the products are all removed it informs the customer that the cart is empty
+ */
 
 function createClearNowButton() {
   clearNow.id = "clear-now-button";
@@ -62,6 +71,11 @@ function createClearNowButton() {
 
   return clearNow;
 }
+
+/**
+ * Function that renders the HTML elements needed to generate the checkout page
+ * Total price calculations are done here
+ */
 
 function renderCheckout() {
   let subTotal = 0;
@@ -122,6 +136,7 @@ function renderCheckout() {
       removeButton.addEventListener("click", function () {
         productListLI.parentElement.removeChild(productListLI);
         removeFromCart(product);
+        window.location.reload();
       });
     });
 
