@@ -10,7 +10,17 @@ function addToCart(product) {
   }
 }
 
-function removeFromCart(product) {}
+function removeFromCart(product) {
+  let productArray = JSON.parse(localStorage.getItem("Products"));
+  for (let i = 0; i < productArray.length; i++) {
+    if (product.id === productArray[i].id) {
+      productArray.splice(i, 1);
+      console.log(productArray.length);
+      break;
+    }
+  }
+  localStorage.setItem("Products", JSON.stringify(productArray));
+}
 
 function getCartTotal(product) {}
 

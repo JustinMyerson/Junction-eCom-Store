@@ -1,3 +1,4 @@
+import { removeFromCart } from "./shoppingCart.js";
 import { calculateVat } from "./utils.js";
 
 // Needs to get the products from local storage
@@ -103,6 +104,7 @@ function renderCheckout() {
       productDivRight.classList.add("product-div-checkout-right");
       productDivRight.innerText = `R${currentProduct.discounted_price}`;
       const removeButton = document.createElement("a");
+      removeButton.id = "remove-button-checkout";
       removeButton.classList.add("remove-button-checkout");
       removeButton.innerText = "Remove";
 
@@ -116,6 +118,11 @@ function renderCheckout() {
       productListUL.appendChild(productListLI);
 
       subTotal += currentProduct.discounted_price;
+
+      removeButton.addEventListener("click", function () {
+        productListLI.parentElement.removeChild(productListLI);
+        removeFromCart(product);
+      });
     });
 
     subTotal = parseFloat(subTotal).toFixed(2);
