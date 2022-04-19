@@ -13,6 +13,8 @@ productListUL.classList.add("product-list-ul");
 const costs = document.createElement("div");
 costs.classList.add("checkout-price-list");
 
+const clearNow = document.createElement("button");
+
 const subtotalText = document.getElementById("subtotal-text");
 const vatText = document.getElementById("vat-text");
 const totalText = document.getElementById("total-text");
@@ -29,13 +31,18 @@ cartDiv.appendChild(productsInCartDiv);
 cartDiv.appendChild(costsDiv);
 
 function renderEmptyCart() {
+  const div = document.getElementById("cart-headings");
+  const costsDiv = document.getElementById("costs");
+  const productsInCartDiv = document.getElementById("products-in-cart");
+  div.style.justifyContent = "center";
   itemsInCartText.innerText = "Your cart is empty!";
-  itemsInCartText.style.justifyContent = "center";
+  costsDiv.parentElement.removeChild(costsDiv);
+  productsInCartDiv.parentElement.removeChild(productsInCartDiv);
+  clearNow.parentElement.removeChild(clearNow);
   renderCheckout();
 }
 
 function createClearNowButton() {
-  const clearNow = document.createElement("button");
   clearNow.id = "clear-now-button";
   clearNow.innerText = "Clear cart";
   clearNow.style.paddingLeft = "20px";
@@ -59,6 +66,10 @@ function renderCheckout() {
   let subTotal = 0;
   let vat = 0;
   let total = 0;
+
+  if (localStorage.length === 0) {
+    renderEmptyCart();
+  }
 
   if (localStorage.length !== 0) {
     itemsInCartText.innerText = `Your cart has ${localStorage.length} items`;

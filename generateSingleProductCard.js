@@ -34,7 +34,6 @@ function generateSingleProductCard(product) {
 
   // Create an event listener for the add to cart button
   productCartButton.addEventListener("click", () => {
-    console.log("clicked");
     onAddToCart(product);
   });
 
@@ -92,7 +91,7 @@ let currentNumberOfItems = 0;
  * @returns Product ID
  */
 function onAddToCart(product) {
-  let numberOfItemsInCart = document.getElementById("items-in-cart-text");
+  const numberOfItemsInCart = document.getElementById("items-in-cart-text");
   currentNumberOfItems += 1;
   numberOfItemsInCart.textContent = currentNumberOfItems;
   return product.id;
