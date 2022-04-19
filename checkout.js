@@ -116,15 +116,15 @@ function renderCheckout() {
       productListUL.appendChild(productListLI);
 
       subTotal += currentProduct.discounted_price;
-
-      //subtotalAmount = subtotalAmount.toFixed(2);
-      subtotalAmount.innerText = `R ${subTotal}`;
-      vat = calculateVat(subTotal).toFixed(2);
-      vatAmount.innerText = `R ${vat}`;
-      total = (parseFloat(vat) + parseFloat(subTotal)).toFixed(2);
-      totalAmount.innerText = `R ${total}`;
-      productsInCartDiv.appendChild(productListUL);
     });
+
+    subTotal = parseFloat(subTotal).toFixed(2);
+    subtotalAmount.innerText = `R ${subTotal}`;
+    vat = calculateVat(subTotal).toFixed(2);
+    vatAmount.innerText = `R ${vat}`;
+    total = (parseFloat(vat) + parseFloat(subTotal)).toFixed(2);
+    totalAmount.innerText = `R ${total}`;
+    productsInCartDiv.appendChild(productListUL);
   }
 }
 
