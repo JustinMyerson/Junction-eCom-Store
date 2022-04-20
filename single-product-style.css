@@ -181,6 +181,7 @@ h1 {
   justify-content: space-between;
   padding-left: 50px;
   width: 900px;
+  height: 660px;
 }
 
 .product-name {
@@ -190,7 +191,7 @@ h1 {
   font-size: 60px;
   line-height: 53px;
   align-items: center;
-  margin-top: 20px;
+  margin: 0px;
 }
 
 .product-designer {

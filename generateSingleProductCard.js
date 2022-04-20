@@ -30,7 +30,7 @@ function generateSingleProductCard(product) {
   const prices = document.createElement("div");
   const oldPrices = document.createElement("div");
   const currentPrices = document.createElement("div");
-  currentPrices.textContent = product.discounted_price;
+  currentPrices.textContent = `R${product.discounted_price}`;
   const productCartButton = document.createElement("div");
 
   // Create an event listener for the add to cart button
@@ -69,6 +69,7 @@ function generateSingleProductCard(product) {
   prices.appendChild(oldPrices);
   prices.appendChild(currentPrices);
   pricesAndIcons.appendChild(productCartButton);
+  productDiv.appendChild(productDetails);
 
   if (product.price === product.discounted_price) {
     oldPrices.textContent = "blank";
@@ -76,7 +77,7 @@ function generateSingleProductCard(product) {
     productImageText.textContent = "";
     productImageDiv.style.backgroundColor = "transparent";
   } else {
-    oldPrices.textContent = product.price;
+    oldPrices.textContent = `R${product.price}`;
   }
 
   mainDiv.appendChild(productDiv);
