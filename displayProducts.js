@@ -1,4 +1,5 @@
 import { generateProductCard } from "./generateProductCard.js";
+import { renderNumberItemsInCart } from "./utils.js";
 
 /**
  * Function that displays the product cards for us
@@ -15,7 +16,6 @@ function displayProducts(products) {
   let row = 1;
   let counter = 0;
   let displayRow = document.getElementById(`row-${row}`);
-  let numberOfShowMoreClicked = 0;
 
   const showMoreButton = document.getElementById("load-more-button");
 
@@ -43,5 +43,7 @@ function displayProducts(products) {
     }
   });
 }
+
+renderNumberItemsInCart();
 
 export { displayProducts };

@@ -13,4 +13,9 @@ function calculateVat(amount) {
   return amount * 0.15;
 }
 
-export { doFetch, calculateVat };
+function renderNumberItemsInCart() {
+  const itemsInCart = document.getElementById("items-in-cart-text");
+  itemsInCart.innerText = JSON.parse(localStorage.getItem("Products")).length;
+}
+
+export { doFetch, calculateVat, renderNumberItemsInCart };

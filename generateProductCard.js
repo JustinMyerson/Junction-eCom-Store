@@ -1,5 +1,6 @@
 import { calculateDiscountPercentage } from "./calculateDiscount.js";
 import { addToCart } from "./shoppingCart.js";
+import { renderNumberItemsInCart } from "./utils.js";
 
 /**
  * Function that creates a individual product card by generating the HTML needed
@@ -110,10 +111,8 @@ let currentNumberOfItems = 0;
  * @returns Product ID
  */
 function onAddToCart(product) {
-  let numberOfItemsInCart = document.getElementById("items-in-cart-text");
-  currentNumberOfItems += 1;
-  numberOfItemsInCart.textContent = currentNumberOfItems;
   addToCart(product);
+  renderNumberItemsInCart();
   return product.id;
 }
 

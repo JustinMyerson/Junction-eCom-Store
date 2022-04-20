@@ -1,5 +1,5 @@
 import { removeFromCart } from "./shoppingCart.js";
-import { calculateVat } from "./utils.js";
+import { calculateVat, renderNumberItemsInCart } from "./utils.js";
 
 const cartDivHeadings = document.getElementById("cart-headings");
 const cartDiv = document.getElementById("cart-container");
@@ -150,4 +150,5 @@ function renderCheckout() {
   }
 }
 
+renderNumberItemsInCart();
 renderCheckout();
