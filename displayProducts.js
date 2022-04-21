@@ -40,6 +40,11 @@ function displayProducts(products) {
         displayRow.appendChild(generateProductCard(products[i]));
         counter += 1;
       }
+    } else if (counter === 9) {
+      row += 1;
+      displayRow = document.getElementById(`row-${row}`);
+      displayRow.appendChild(generateProductCard(products[9]));
+      counter += 1;
     }
   });
 }

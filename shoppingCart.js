@@ -1,3 +1,5 @@
+import { renderNumberItemsInCart } from "./utils.js";
+
 /**
  * Checks whether there are products already in local storage
  * If not, creates a new array of products to be stored
@@ -39,6 +41,7 @@ function getCartTotal(product) {}
  */
 function clearCart() {
   localStorage.clear();
+  renderNumberItemsInCart();
 }
 
 export { addToCart, removeFromCart, getCartTotal, clearCart };

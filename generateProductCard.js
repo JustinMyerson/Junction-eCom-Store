@@ -23,16 +23,13 @@ function generateProductCard(product) {
   const productDetails = document.createElement("div");
   const productName = document.createElement("h2");
   productName.textContent = product.name;
-  const productDesigner = document.createElement("h3");
-  productDesigner.textContent = product.company;
-  const strongDesigner = document.createElement("strong");
   const productDescription = document.createElement("div");
   productDescription.textContent = product.description;
   const pricesAndIcons = document.createElement("div");
   const prices = document.createElement("div");
   const oldPrices = document.createElement("div");
   const currentPrices = document.createElement("div");
-  currentPrices.textContent = product.discounted_price;
+  currentPrices.textContent = `R ${product.discounted_price}`;
   const productCartButton = document.createElement("div");
   const cartButton = document.createElement("button");
   const buttonImage = document.createElement("img");
@@ -59,8 +56,6 @@ function generateProductCard(product) {
   productImageText.id = "discount";
   productDetails.classList.add("product-details");
   productName.classList.add("product-name");
-  productDesigner.classList.add("product-designer");
-  strongDesigner.classList.add("strong-designer");
   productDescription.classList.add("product-description");
   pricesAndIcons.classList.add("prices-and-icons");
   prices.classList.add("prices");
@@ -78,8 +73,6 @@ function generateProductCard(product) {
   productImageDiv.appendChild(productImageText);
   productDiv.appendChild(productDetails);
   productDetails.appendChild(productName);
-  productDetails.appendChild(productDesigner);
-  productDesigner.appendChild(strongDesigner);
   productDetails.appendChild(productDescription);
   productDetails.appendChild(pricesAndIcons);
   pricesAndIcons.appendChild(prices);
@@ -95,7 +88,7 @@ function generateProductCard(product) {
     productImageText.textContent = "";
     productImageDiv.style.backgroundColor = "transparent";
   } else {
-    oldPrices.textContent = product.price;
+    oldPrices.textContent = `R ${product.price}`;
   }
 
   ulProducts.appendChild(listItem);

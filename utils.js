@@ -15,7 +15,11 @@ function calculateVat(amount) {
 
 function renderNumberItemsInCart() {
   const itemsInCart = document.getElementById("items-in-cart-text");
-  itemsInCart.innerText = JSON.parse(localStorage.getItem("Products")).length;
+  try {
+    itemsInCart.innerText = JSON.parse(localStorage.getItem("Products")).length;
+  } catch {
+    console.log("Error caught, proceed as usual though!");
+  }
 }
 
 export { doFetch, calculateVat, renderNumberItemsInCart };
