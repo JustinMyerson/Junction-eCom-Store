@@ -22,8 +22,9 @@ function generateSingleProductCard(product) {
   const productName = document.createElement("h2");
   productName.textContent = product.name;
   const productDesigner = document.createElement("h3");
-  productDesigner.textContent = product.company;
+  productDesigner.textContent = "By ";
   const strongDesigner = document.createElement("strong");
+  strongDesigner.innerText = product.company;
   const productDescription = document.createElement("div");
   productDescription.textContent = product.description;
   const pricesAndIcons = document.createElement("div");
