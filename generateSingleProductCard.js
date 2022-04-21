@@ -32,7 +32,8 @@ function generateSingleProductCard(product) {
   const oldPrices = document.createElement("div");
   const currentPrices = document.createElement("div");
   currentPrices.textContent = `R${product.discounted_price}`;
-  const productCartButton = document.createElement("div");
+  const productCartButtonDiv = document.createElement("div");
+  const productCartButton = document.createElement("button");
 
   // Create an event listener for the add to cart button
   productCartButton.addEventListener("click", () => {
@@ -54,6 +55,7 @@ function generateSingleProductCard(product) {
   prices.classList.add("prices");
   oldPrices.classList.add("old-price");
   currentPrices.classList.add("current-price");
+  productCartButtonDiv.classList.add("buy-now-button-div");
   productCartButton.classList.add("buy-now-button");
   productCartButton.textContent = "ADD TO CART";
 
@@ -69,6 +71,7 @@ function generateSingleProductCard(product) {
   pricesAndIcons.appendChild(prices);
   prices.appendChild(oldPrices);
   prices.appendChild(currentPrices);
+  productCartButtonDiv.appendChild(productCartButton);
   pricesAndIcons.appendChild(productCartButton);
   productDiv.appendChild(productDetails);
 
