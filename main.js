@@ -13,5 +13,3 @@ async function main() {
 }
 
 main();
-
-// Footer

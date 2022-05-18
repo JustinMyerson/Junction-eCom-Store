@@ -45,6 +45,7 @@ function displayProducts(products) {
       displayRow = document.getElementById(`row-${row}`);
       displayRow.appendChild(generateProductCard(products[9]));
       counter += 1;
+      showMoreButton.parentNode.removeChild(showMoreButton);
     }
   });
 }

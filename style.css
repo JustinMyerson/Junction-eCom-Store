@@ -154,7 +154,7 @@ h1 {
 }
 
 .main {
-  padding-bottom: 300px;
+  padding-bottom: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -340,6 +340,8 @@ h1 {
   flex-direction: row;
   justify-content: space-between;
   margin-left: 850px;
+  padding-right: 30px;
+  padding-bottom: 5px;
   text-align: right;
 }
 
